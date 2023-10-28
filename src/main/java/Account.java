@@ -2,7 +2,7 @@ public abstract class Account {
 	double balance;
 	private double apr;
 
-	public Account(double apr) {
+	protected Account(double apr) {
 		this.apr = apr;
 	}
 
