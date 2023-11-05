@@ -1,14 +1,28 @@
+import java.util.Set;
 public class CommandValidatorCreate {
+//    Set<String> existingAccountIds;
     public boolean validate(String[] commandParts) {
-//        if (accountTypeIsValid(commandParts[1])) {
-//            return true;
-//         }
         // Validation logic specific to "create" command
-        if (commandParts.length >= 2) {
+        if (commandParts.length >= 4 ) {
             String accountType = commandParts[1].toLowerCase();
-            return isValidAccountType(accountType);
+            String accountId = commandParts[2];
+            String aprValue = commandParts[3];
+            if (!isValidAccountType(accountType)) {
+                return false;
+            }
+
+            if (!isValidAccountId(accountId)) {
+                return false;
+            }
+//            if (!isValidAPR(aprValue)) {
+//                return false;
+//            }
+
         }
-        return false; // Invalid format
+        else {
+            return false; // Missing account type, account ID, or initial balance
+        }
+        return true;
     }
 
     private boolean isValidAccountType(String accountType){
@@ -23,4 +37,23 @@ public class CommandValidatorCreate {
         }
         return false;
     }
+
+    private boolean isValidAccountId(String accountId) {
+        if (accountId.length() != 8) {
+            return false;
+        }
+
+        if (!accountId.matches("\\d+")) {
+            return false;
+        }
+
+//        if (existingAccountIds.contains(accountId)) {
+//            return false;
+//        }
+
+        return true;
+    }
+
+
+
 }

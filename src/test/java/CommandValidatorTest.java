@@ -32,6 +32,7 @@ public class CommandValidatorTest {
 
     @Test
     void valid_action_command() {
+
         boolean actual = commandValidator.validateCommand("Create savings 12345678 0.6");
         assertTrue(actual);
     }
@@ -45,6 +46,38 @@ public class CommandValidatorTest {
         boolean actual = commandValidator.validateCommand("savings 98765432 0.6");
         assertFalse(actual);
     }
+
+    @Test
+    void missing_account_id() {
+        boolean actual = commandValidator.validateCommand("Create savings 0.6");
+        assertFalse(actual);
+    }
+
+    @Test
+    void account_id_has_more_than_8_digits() {
+        boolean actual = commandValidator.validateCommand("Create savings 1234567890 0.6");
+        assertFalse(actual);
+    }
+
+    @Test
+    void account_id_has_less_than_8_digits() {
+        boolean actual = commandValidator.validateCommand("Create savings 1234 0.6");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_form_of_account_id() {
+        boolean actual = commandValidator.validateCommand("Create checking one123 0.01");
+        assertFalse(actual);
+    }
+
+    @Test
+    void negative_account_id() {
+        boolean actual = commandValidator.validateCommand("Create savings -1234567 0.6");
+        assertFalse(actual);
+    }
+
+
 
 
 
