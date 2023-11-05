@@ -120,6 +120,38 @@ public class CommandValidatorTest {
         assertFalse(actual);
     }
 
+    @Test
+    void extra_space_beginning() {
+        boolean actual = commandValidator.validateCommand("    Create cd 98765432 1.2 1000.65");
+        assertFalse(actual);
+    }
+
+    @Test
+    void extra_space_middle() {
+        boolean actual = commandValidator.validateCommand("Create       cd 98765432 1.2 1000.65");
+        assertFalse(actual);
+    }
+
+    @Test
+    void extra_space_end() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 1000.65     ");
+        assertTrue(actual);
+    }
+
+    @Test
+    void case_insensitive_action_command() {
+        boolean actual = commandValidator.validateCommand("CReate savings 98765432 0.6");
+        assertTrue(actual);
+    }
+
+    @Test
+    void case_insensitive_account_types() {
+        boolean actual = commandValidator.validateCommand("Create sAVinGs 98765432 0.6");
+        assertTrue(actual);
+    }
+
+
+
 
 
 
