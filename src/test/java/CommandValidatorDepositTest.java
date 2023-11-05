@@ -157,6 +157,29 @@ public class CommandValidatorDepositTest {
         boolean actual = commandValidator.validateCommand("Deposit 12345678 500");
         assertTrue(actual);
     }
+    @Test
+    void deposit_invalid_account_id_length_more_than_8_digits() {
+        boolean actual = commandValidator.validateCommand("Deposit 1234567890 500");
+        assertFalse(actual);
+    }
+
+    @Test
+    void deposit_invalid_account_id_length_less_than_8_digits() {
+        boolean actual = commandValidator.validateCommand("Deposit 1234567 500");
+        assertFalse(actual);
+    }
+
+    @Test
+    void deposit_account_id_not_in_number_form() {
+        boolean actual = commandValidator.validateCommand("Deposit one123 500");
+        assertFalse(actual);
+    }
+
+    @Test
+    void deposit_negative_account_id() {
+        boolean actual = commandValidator.validateCommand("Deposit -1234567 500");
+        assertFalse(actual);
+    }
 
 
 }
