@@ -4,11 +4,16 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 public class CommandValidatorCreateTest {
     private CommandValidator commandValidator;
+    public static final String ACCOUNT_ID = "28282828";
     Bank bank;
+    Savings savingsAccount;
 
     @BeforeEach
     void setUp(){
         commandValidator = new CommandValidator(bank);
+        bank = new Bank();
+        savingsAccount = new Savings(AccountTest.APR);
+        bank.addAccount(ACCOUNT_ID, savingsAccount);
     }
 
     @Test
