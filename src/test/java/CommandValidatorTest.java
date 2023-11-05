@@ -14,9 +14,22 @@ public class CommandValidatorTest {
 
     @Test
     void valid_create_command_string() {
-        boolean actual = commandValidator.validate(VALID_CREATE_COMMAND);
+        boolean actual = commandValidator.validateCommand(VALID_CREATE_COMMAND);
         assertTrue(actual);
     }
+
+    @Test
+    void typos_in_account_types() {
+        boolean actual = commandValidator.validateCommand("Create favings 98765432 0.6");
+        assertFalse(actual);
+    }
+
+    @Test
+    void missing_account_types() {
+        boolean actual = commandValidator.validateCommand("Create 98765432 0.6");
+        assertFalse(actual);
+    }
+
 
 
 
