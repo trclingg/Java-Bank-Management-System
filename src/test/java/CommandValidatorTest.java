@@ -3,18 +3,25 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CommandValidatorTest {
-    public static final String VALID_CREATE_COMMAND = "Create savings 98765432 0.6";
+public class CommandValidatorTest  {
+
     private CommandValidator commandValidator;
+    Bank bank;
 
     @BeforeEach
-    void setUp() {
-        commandValidator = new CommandValidator();
+    void setUp(){
+        commandValidator = new CommandValidator(bank);
     }
+//    private CommandValidator commandValidator;
+//
+//    @BeforeEach
+//    void setUp() {
+//        commandValidator = new CommandValidator();
+//    }
 
     @Test
     void valid_create_command_string() {
-        boolean actual = commandValidator.validateCommand(VALID_CREATE_COMMAND);
+        boolean actual = commandValidator.validateCommand("Create savings 98765432 0.6");
         assertTrue(actual);
     }
 
@@ -149,6 +156,64 @@ public class CommandValidatorTest {
         boolean actual = commandValidator.validateCommand("Create sAVinGs 98765432 0.6");
         assertTrue(actual);
     }
+
+    @Test
+    void valid_cd_amount() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 1200");
+        assertTrue(actual);
+    }
+
+    @Test
+    void cd_amount_with_decimal_trailing() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 1200.32");
+        assertTrue(actual);
+    }
+
+    @Test
+    void cd_amount_at_min_bound() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 1000");
+        assertTrue(actual);
+    }
+
+    @Test
+    void cd_amount_at_max_bound() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 10000");
+        assertTrue(actual);
+    }
+
+    @Test
+    void cd_amount_below_range() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 900");
+        assertFalse(actual);
+    }
+
+    @Test
+    void cd_amount_above_range() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 12000");
+        assertFalse(actual);
+    }
+
+    @Test
+    void missing_cd_amount() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2");
+        assertFalse(actual);
+    }
+
+    @Test
+    void negative_cd_amount() {
+        boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 -500");
+        assertFalse(actual);
+    }
+
+    
+
+//    @Test
+//     void valid_deposit_command() {
+//        boolean actual = commandValidator.validateCommand("Deposit 12345678 500");
+//        assertTrue(actual);
+//    }
+
+
 
 
 
