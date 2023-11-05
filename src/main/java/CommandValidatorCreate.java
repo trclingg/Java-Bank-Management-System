@@ -14,9 +14,9 @@ public class CommandValidatorCreate {
             if (!isValidAccountId(accountId)) {
                 return false;
             }
-//            if (!isValidAPR(aprValue)) {
-//                return false;
-//            }
+            if (!isValidAPR(aprValue)) {
+                return false;
+            }
 
         }
         else {
@@ -55,5 +55,24 @@ public class CommandValidatorCreate {
     }
 
 
+    private boolean isValidAPR(String aprValue) {
+        try {
+            double apr = Double.parseDouble(aprValue);
 
+            if (apr >= 0 && apr <= 10) {
+                // Check if the number of decimal places is 0, 1, or 2
+                String[] parts = aprValue.split("\\.");
+                if (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2)) {
+                    return true; // Valid APR within the range [0, 10] with up to 2 decimal places
+                }
+            }
+        } catch (NumberFormatException e) {
+            // Invalid APR: Not a valid number
+        }
+
+        return false; //other reasons
+//        return true;
+
+    }
 }
+

@@ -77,6 +77,53 @@ public class CommandValidatorTest {
         assertFalse(actual);
     }
 
+    @Test
+    void valid_apr() {
+
+        boolean actual = commandValidator.validateCommand("Create savings 98765432 0.65");
+        assertTrue(actual);
+    }
+
+    @Test
+    void apr_at_min_bound() {
+        boolean actual = commandValidator.validateCommand("Create savings 98765432 0");
+        assertTrue(actual);
+    }
+
+    @Test
+    void apr_at_max_bound() {
+        boolean actual = commandValidator.validateCommand("Create savings 98765432 10");
+        assertTrue(actual);
+    }
+
+    @Test
+    void negative_apr() {
+        boolean actual = commandValidator.validateCommand("Create savings 98765432 -0.65");
+        assertFalse(actual);
+    }
+
+    @Test
+    void apr_not_in_range() {
+        boolean actual = commandValidator.validateCommand("Create savings 98765432 15.3");
+        assertFalse(actual);
+    }
+
+    @Test
+    void missing_apr() {
+        boolean actual = commandValidator.validateCommand("Create savings 98765432");
+        assertFalse(actual);
+    }
+
+    @Test
+    void apr_not_in_double_form() {
+        boolean actual = commandValidator.validateCommand("Create savings 98765432 two");
+        assertFalse(actual);
+    }
+
+
+
+
+
 
 
 
