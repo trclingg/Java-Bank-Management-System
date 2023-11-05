@@ -30,6 +30,24 @@ public class CommandValidatorTest {
         assertFalse(actual);
     }
 
+    @Test
+    void valid_action_command() {
+        boolean actual = commandValidator.validateCommand("Create savings 12345678 0.6");
+        assertTrue(actual);
+    }
+    @Test
+    void invalid_action_command() {
+        boolean actual = commandValidator.validateCommand("Foobar savings 98765432 0.6");
+        assertFalse(actual);
+    }
+    @Test
+    void missing_action_command() {
+        boolean actual = commandValidator.validateCommand("savings 98765432 0.6");
+        assertFalse(actual);
+    }
+
+
+
 
 
 
