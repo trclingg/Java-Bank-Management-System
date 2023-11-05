@@ -13,8 +13,14 @@ public class Bank {
 		return accounts;
 	}
 
-	public void addAccount(String accountID, Account account) {
-		accounts.put(accountID, account);
+	public boolean addAccount(String accountID, Account account) {
+		if (!accounts.containsKey(accountID)) {
+			accounts.put(accountID, account);
+			return true;  // Successfully added the account
+		} else {
+			return false; // Account ID already exists
+		}
+//		accounts.put(accountID, account);
 	}
 
 	public void depositMoneyById(String accountId, double depositAmount) {

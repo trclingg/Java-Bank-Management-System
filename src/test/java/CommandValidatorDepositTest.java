@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CommandValidatorDepositTest {
     public static final String ACCOUNT_ID = "12345678";
     public static final String ACCOUNT_ID_1 = "89456185";
+
+    public static final String ACCOUNT_ID_2 = "01010101";
     CommandValidator commandValidator;
     Savings savingsAccount;
     CertificateDeposit cdAccount;
@@ -20,7 +22,8 @@ public class CommandValidatorDepositTest {
         checkingAccount = new Checking(AccountTest.APR);
         bank.addAccount(ACCOUNT_ID_1, checkingAccount);
         commandValidator = new CommandValidator(bank);
-
+        cdAccount = new CertificateDeposit(AccountTest.APR, AccountTest.DEPOSIT);
+        bank.addAccount(ACCOUNT_ID_2, cdAccount);
     }
     @Test
     void deposit_is_valid(){
@@ -73,8 +76,87 @@ public class CommandValidatorDepositTest {
 
     @Test
     void valid_deposit_max_checking() {
-        boolean actual = commandValidator.validateCommand("Deposit 12345678 1000");
+        boolean actual = commandValidator.validateCommand("Deposit 89456185 1000");
         assertTrue(actual);
     }
+
+    @Test
+    void valid_deposit_zero() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678 0");
+        assertTrue(actual);
+    }
+
+    @Test
+    void invalid_deposit_negative() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678 -500");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_deposit_max_savings_exceeded() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678 2501");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_deposit_max_checking_exceeded() {
+        boolean actual = commandValidator.validateCommand("Deposit 89456185 1001");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_deposit_missing_amount() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_deposit_missing_account_id() {
+        boolean actual = commandValidator.validateCommand("Deposit 500");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_deposit_typos_in_command() {
+        boolean actual = commandValidator.validateCommand("Depost 12345678 500");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_deposit_missing_account_id_and_amount() {
+        boolean actual = commandValidator.validateCommand("Deposit");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_deposit_cd_account() {
+        boolean actual = commandValidator.validateCommand("Deposit 01010101 500");
+        assertFalse(actual);
+    }
+
+    @Test
+    void deposit_amount_with_more_than_two_decimals() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678 500.668");
+        assertFalse(actual);
+    }
+
+    @Test
+    void deposit_valid_with_two_decimals() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678 500.65");
+        assertTrue(actual);
+    }
+
+    @Test
+    void deposit_valid_with_one_decimal() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678 500.6");
+        assertTrue(actual);
+    }
+
+    @Test
+    void deposit_valid_with_integer_amount() {
+        boolean actual = commandValidator.validateCommand("Deposit 12345678 500");
+        assertTrue(actual);
+    }
+
 
 }
