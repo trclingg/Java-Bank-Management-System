@@ -1,4 +1,3 @@
-//import org.w3c.dom.UserDataHandler;
 
 public class CommandValidator {
     public Bank bank;
@@ -19,10 +18,10 @@ public class CommandValidator {
             CommandValidatorCreate createValidator = new CommandValidatorCreate(bank);
             return createValidator.validate(commandParts);
         }
-//        else if ("deposit".equals(action)) {
-//            CommandValidatorDeposit depositValidator = new CommandValidatorDeposit(bank);
-//            return depositValidator.validate(commandParts);
-//        }
+        else if ("deposit".equals(action)) {
+            CommandValidatorDeposit depositValidator = new CommandValidatorDeposit(bank);
+            return depositValidator.validate(commandParts);
+        }
 
         return false;
     }

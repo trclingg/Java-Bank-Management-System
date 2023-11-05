@@ -51,19 +51,7 @@ public class CommandValidatorCreate extends CommandValidator {
 
     private boolean isValidAccountId(String accountId) {
         return super.accountIDValid(accountId);
-//        if (accountId.length() != 8) {
-//            return false;
-//        }
-//
-//        if (!accountId.matches("\\d+")) {
-//            return false;
-//        }
 
-//        if (existingAccountIds.contains(accountId)) {
-//            return false;
-//        }
-
-//        return true;
     }
 
 

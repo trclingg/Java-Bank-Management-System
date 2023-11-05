@@ -25,4 +25,7 @@ public abstract class Account {
 			balance -= withdrawalAmount;
 		}
 	}
+	public abstract String getAccountType();
+	
 }
+

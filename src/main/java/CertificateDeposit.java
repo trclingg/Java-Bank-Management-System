@@ -3,4 +3,9 @@ public class CertificateDeposit extends Account {
 		super(apr);
 		this.balance = balance;
 	}
+
+	@Override
+	public String getAccountType() {
+		return "cd";
+	}
 }
