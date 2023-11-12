@@ -78,5 +78,25 @@ public class commandProcessorCreateTest {
         assertEquals( amountCd, actual);
     }
 
+    @Test
+    void create_checking_command_processed_with_supplied_account_id() {
+        String actual = bank.getAccounts().get(accountIdTest1).getAccountID();
+        assertEquals(accountIdTest1, actual);
+    }
+    @Test
+    void create_savings_command_processed_with_supplied_account_id() {
+        String actual = bank.getAccounts().get(accountIdTest2).getAccountID();
+        assertEquals(accountIdTest2, actual);
+    }
+    @Test
+    void create_cd_command_processed_with_supplied_account_id() {
+        String actual = bank.getAccounts().get(accountIdTest3).getAccountID();
+        assertEquals(accountIdTest3, actual);
+    }
 
+    @Test
+    void bank_contains_accounts_after_processing_commands() {
+        int actual = bank.getAccounts().size();
+        assertEquals(3, actual);
+    }
 }
