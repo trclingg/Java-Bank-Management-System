@@ -5,15 +5,15 @@ import static org.junit.jupiter.api.Assertions.*;
 public class commandProcessorCreateTest {
     private CommandProcessor commandProcessor;
     private Bank bank;
-    private final String accountIdTest1 = "12345678";
-    private final String accountIdTest2 = "28092908";
-    private final String accountIdTest3 = "98765432";
+    private final String ACCOUNT_ID_1 = "12345678";
+    private final String ACCOUNT_ID_2 = "28092908";
+    private final String ACCOUNT_ID_3 = "98765432";
 
-    private final double apr1 = 1.0;
-    private final double apr2 = 2 ;
-    private final double apr3 = 3.54;
+    private final double APR_1 = 1.0;
+    private final double APR_2 = 2 ;
+    private final double APR_3 = 3.54;
 
-    private final double amountCd = 500;
+    private final double AMOUNT_CD = 500;
 
     @BeforeEach
     void setUp() {
@@ -26,72 +26,72 @@ public class commandProcessorCreateTest {
 
     @Test
     void create_checking_command_is_processed_to_the_bank() {
-        assertTrue(bank.accountIdAlreadyExists(accountIdTest1));
+        assertTrue(bank.accountIdAlreadyExists(ACCOUNT_ID_1));
     }
     @Test
     void create_savings_command_is_processed_to_the_bank() {
-        assertTrue(bank.accountIdAlreadyExists(accountIdTest2));
+        assertTrue(bank.accountIdAlreadyExists(ACCOUNT_ID_2));
     }
     @Test
     void create_cd_command_is_processed_to_the_bank() {
-        assertTrue(bank.accountIdAlreadyExists(accountIdTest3));
+        assertTrue(bank.accountIdAlreadyExists(ACCOUNT_ID_3));
     }
 
     @Test
     void create_checking_command_processed_with_supplied_apr() {
-        double actual = bank.getAccounts().get(accountIdTest1).getApr();
-        assertEquals(apr1, actual);
+        double actual = bank.getAccounts().get(ACCOUNT_ID_1).getApr();
+        assertEquals(APR_1, actual);
     }
 
     @Test
     void create_savings_command_processed_with_supplied_apr() {
-        double actual = bank.getAccounts().get(accountIdTest2).getApr();
-        assertEquals(apr2, actual);
+        double actual = bank.getAccounts().get(ACCOUNT_ID_2).getApr();
+        assertEquals(APR_2, actual);
     }
 
     @Test
     void create_cd_command_processed_with_supplied_apr() {
-        double actual = bank.getAccounts().get(accountIdTest3).getApr();
-        assertEquals(apr3, actual);
+        double actual = bank.getAccounts().get(ACCOUNT_ID_3).getApr();
+        assertEquals(APR_3, actual);
     }
 
     @Test
     void create_checking_command_processed_with_right_account_type() {
-        String actual = bank.getAccounts().get(accountIdTest1).getAccountType();
+        String actual = bank.getAccounts().get(ACCOUNT_ID_1).getAccountType();
         assertEquals("checking", actual);
     }
 
     @Test
     void create_savings_command_processed_with_right_account_type() {
-        String actual = bank.getAccounts().get(accountIdTest2).getAccountType();
+        String actual = bank.getAccounts().get(ACCOUNT_ID_2).getAccountType();
         assertEquals("savings", actual);
     }
 
     @Test
     void create_cd_command_processed_with_right_account_type() {
-        String actual = bank.getAccounts().get(accountIdTest3).getAccountType();
+        String actual = bank.getAccounts().get(ACCOUNT_ID_3).getAccountType();
         assertEquals("cd", actual);
     }
     @Test
     void create_cd_account_has_correct_balance() {
-        double actual = bank.getAccounts().get(accountIdTest3).getBalance();
-        assertEquals( amountCd, actual);
+        double actual = bank.getAccounts().get(ACCOUNT_ID_3).getBalance();
+        assertEquals(AMOUNT_CD, actual);
     }
 
     @Test
     void create_checking_command_processed_with_supplied_account_id() {
-        String actual = bank.getAccounts().get(accountIdTest1).getAccountID();
-        assertEquals(accountIdTest1, actual);
+        String actual = bank.getAccounts().get(ACCOUNT_ID_1).getAccountID();
+        assertEquals(ACCOUNT_ID_1, actual);
     }
     @Test
     void create_savings_command_processed_with_supplied_account_id() {
-        String actual = bank.getAccounts().get(accountIdTest2).getAccountID();
-        assertEquals(accountIdTest2, actual);
+        String actual = bank.getAccounts().get(ACCOUNT_ID_2).getAccountID();
+        assertEquals(ACCOUNT_ID_2, actual);
     }
     @Test
     void create_cd_command_processed_with_supplied_account_id() {
-        String actual = bank.getAccounts().get(accountIdTest3).getAccountID();
-        assertEquals(accountIdTest3, actual);
+        String actual = bank.getAccounts().get(ACCOUNT_ID_3).getAccountID();
+        assertEquals(ACCOUNT_ID_3, actual);
     }
 
     @Test
