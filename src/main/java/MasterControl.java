@@ -1,3 +1,4 @@
+import java.util.List;
 public class MasterControl {
     private CommandProcessor commandProcessor;
     private CommandValidator commandValidator;
@@ -7,5 +8,17 @@ public class MasterControl {
         this.commandProcessor = commandProcessor;
         this.commandStorage = commandStorage;
         this.commandValidator = commandValidator;
+    }
+
+    public List<String> start(List<String> input) {
+        for (String command : input) {
+            if (commandValidator.validateCommand(command)) {
+                commandProcessor.execute(command);
+            } else {
+                commandStorage.addInvalidCommandToList(command);
+            }
+        }
+
+        return commandStorage.getInvalidCommands();
     }
 }
