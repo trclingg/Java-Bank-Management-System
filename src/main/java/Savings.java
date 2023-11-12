@@ -1,6 +1,6 @@
 public class Savings extends Account {
-	public Savings(double apr) {
-		super(apr);
+	public Savings( String accountId,double apr) {
+		super(accountId,apr);
 	}
 
 	@Override

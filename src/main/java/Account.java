@@ -2,7 +2,9 @@ public abstract class Account {
 	double balance;
 	private double apr;
 
-	protected Account(double apr) {
+	private String accountId;
+	protected Account( String accountId ,double apr) {
+		this.accountId = accountId;
 		this.apr = apr;
 	}
 
@@ -26,6 +28,10 @@ public abstract class Account {
 		}
 	}
 	public abstract String getAccountType();
+
+	public String getAccountID() {
+		return accountId;
+	}
 	
 }
 

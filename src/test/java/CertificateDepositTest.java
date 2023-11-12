@@ -8,7 +8,7 @@ public class CertificateDepositTest {
 
 	@BeforeEach
 	public void setUp() {
-		certificateDeposit = new CertificateDeposit(AccountTest.APR, AccountTest.BALANCE);
+		certificateDeposit = new CertificateDeposit("12345678",AccountTest.APR, AccountTest.BALANCE);
 	}
 
 	@Test

@@ -17,13 +17,11 @@ public class CommandValidatorDepositTest {
     @BeforeEach
     void SetUp(){
         bank = new Bank();
-        savingsAccount = new Savings(AccountTest.APR);
-        bank.addAccount(ACCOUNT_ID, savingsAccount);
-        checkingAccount = new Checking(AccountTest.APR);
-        bank.addAccount(ACCOUNT_ID_1, checkingAccount);
+        bank.bankCreateSavingsAccount(ACCOUNT_ID,AccountTest.APR );
+        bank.bankCreateCheckingAccount(ACCOUNT_ID_1, AccountTest.APR);
+        bank.bankCreateCDAccount(ACCOUNT_ID_2, AccountTest.APR, AccountTest.DEPOSIT);
         commandValidator = new CommandValidator(bank);
-        cdAccount = new CertificateDeposit(AccountTest.APR, AccountTest.DEPOSIT);
-        bank.addAccount(ACCOUNT_ID_2, cdAccount);
+
     }
     @Test
     void deposit_is_valid(){

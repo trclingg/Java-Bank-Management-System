@@ -1,6 +1,6 @@
 public class CertificateDeposit extends Account {
-	public CertificateDeposit(double apr, double balance) {
-		super(apr);
+	public CertificateDeposit( String accountId,double apr, double balance) {
+		super(accountId, apr);
 		this.balance = balance;
 	}
 

@@ -233,7 +233,7 @@ public class CommandValidatorCreateTest {
 
     @Test
     void account_id_is_not_unique() {
-        savingsAccount = new Savings(AccountTest.APR);
+        savingsAccount = new Savings(ACCOUNT_ID,AccountTest.APR);
         bank.addAccount(ACCOUNT_ID, savingsAccount);
         boolean actual = commandValidator.validateCommand("Create checking 28282828 0.1");
         assertFalse(actual);

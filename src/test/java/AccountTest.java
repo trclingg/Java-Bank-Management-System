@@ -14,7 +14,7 @@ public class AccountTest {
 
 	@BeforeEach
 	public void setUp() {
-		savingsAccount = new Savings(APR);
+		savingsAccount = new Savings("12345678",APR);
 	}
 
 	@Test

@@ -15,8 +15,8 @@ public class BankTest {
 	@BeforeEach
 	public void setUp() {
 		bank = new Bank();
-		savingsAccount = new Savings(AccountTest.APR);
-		cdAccount = new CertificateDeposit(AccountTest.APR, AccountTest.DEPOSIT);
+		savingsAccount = new Savings("12345678",AccountTest.APR);
+		cdAccount = new CertificateDeposit("28282828",AccountTest.APR, AccountTest.DEPOSIT);
 	}
 
 	@Test

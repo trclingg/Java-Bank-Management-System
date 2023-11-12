@@ -34,17 +34,17 @@ public class Bank {
 	}
 
 	public void bankCreateCheckingAccount(String accountId, double apr) {
-		Checking checkingAccount = new Checking(apr);
+		Checking checkingAccount = new Checking(accountId,apr);
 		accounts.put(accountId, checkingAccount);
 	}
 
 	public void bankCreateSavingsAccount(String accountId, double apr) {
-		Savings savingsAccount = new Savings(apr);
+		Savings savingsAccount = new Savings(accountId, apr);
 		accounts.put(accountId, savingsAccount);
 	}
 
 	public void bankCreateCDAccount(String accountId, double apr, double balance) {
-		CertificateDeposit cdAccount = new CertificateDeposit(apr, balance);
+		CertificateDeposit cdAccount = new CertificateDeposit(accountId, apr, balance);
 		accounts.put(accountId, cdAccount);
 	}
 
