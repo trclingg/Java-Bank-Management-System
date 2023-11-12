@@ -10,10 +10,10 @@ public class CommandValidatorCreateTest {
 
     @BeforeEach
     void setUp(){
-        commandValidator = new CommandValidator(bank);
         bank = new Bank();
-        savingsAccount = new Savings(AccountTest.APR);
-        bank.addAccount(ACCOUNT_ID, savingsAccount);
+        commandValidator = new CommandValidator(bank);
+
+
     }
 
     @Test
@@ -228,6 +228,14 @@ public class CommandValidatorCreateTest {
     @Test
     void cd_amount_cannot_have_more_than_two_decimal() {
         boolean actual = commandValidator.validateCommand("Create cd 98765432 1.2 1000.668");
+        assertFalse(actual);
+    }
+
+    @Test
+    void account_id_is_not_unique() {
+        savingsAccount = new Savings(AccountTest.APR);
+        bank.addAccount(ACCOUNT_ID, savingsAccount);
+        boolean actual = commandValidator.validateCommand("Create checking 28282828 0.1");
         assertFalse(actual);
     }
 

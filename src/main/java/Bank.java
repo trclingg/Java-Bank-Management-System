@@ -13,14 +13,8 @@ public class Bank {
 		return accounts;
 	}
 
-	public boolean addAccount(String accountID, Account account) {
-		if (!accounts.containsKey(accountID)) {
-			accounts.put(accountID, account);
-			return true;  // Successfully added the account
-		} else {
-			return false; // Account ID already exists
-		}
-//		accounts.put(accountID, account);
+	public void addAccount(String accountID, Account account) {
+		accounts.put(accountID, account);
 	}
 
 	public void depositMoneyById(String accountId, double depositAmount) {
@@ -30,4 +24,28 @@ public class Bank {
 	public void withdrawMoneyById(String accountId, double withdrawAmount) {
 		accounts.get(accountId).withdrawMoney(withdrawAmount);
 	}
+
+	public boolean accountIdAlreadyExists(String accountId) {
+		if (accounts.get(accountId) != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public void bankCreateCheckingAccount(String accountId, double apr) {
+		Checking checkingAccount = new Checking(apr);
+		accounts.put(accountId, checkingAccount);
+	}
+
+	public void bankCreateSavingsAccount(String accountId, double apr) {
+		Savings savingsAccount = new Savings(apr);
+		accounts.put(accountId, savingsAccount);
+	}
+
+	public void bankCreateCDAccount(String accountId, double apr, double balance) {
+		CertificateDeposit cdAccount = new CertificateDeposit(apr, balance);
+		accounts.put(accountId, cdAccount);
+	}
+
 }

@@ -49,9 +49,16 @@ public class CommandValidatorCreate extends CommandValidator {
         return false;
     }
 
-    private boolean isValidAccountId(String accountId) {
-        return super.accountIDValid(accountId);
 
+
+    private boolean isValidAccountId(String accountId) {
+        boolean isSuperIdValid = super.accountIDValid(accountId);
+        if (isSuperIdValid && !bank.accountIdAlreadyExists(accountId)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 
