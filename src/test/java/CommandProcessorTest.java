@@ -9,12 +9,19 @@ public class CommandProcessorTest {
     void setUp() {
         bank = new Bank();
         commandProcessor = new CommandProcessor(bank);
-        String testInputString = "create checking 12345678 1.0";
-        commandProcessor.execute(testInputString);
+        commandProcessor.execute("create checking 12345678 1.0");
     }
 
     @Test
     void createCommandBeingProcessed() {
+
         assertTrue(bank.accountIdAlreadyExists("12345678"));
+    }
+
+    @Test
+    void depositCommandBeingProcessed() {
+        commandProcessor.execute(("deposit 12345678 600"));
+        double actual = bank.getAccountById("12345678").getBalance();
+        assertEquals(600, actual);
     }
 }

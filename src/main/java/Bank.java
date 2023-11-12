@@ -17,6 +17,10 @@ public class Bank {
 		accounts.put(accountID, account);
 	}
 
+	public Account getAccountById(String accountId) {
+		return accounts.get(accountId);
+	}
+
 	public void depositMoneyById(String accountId, double depositAmount) {
 		accounts.get(accountId).depositMoney(depositAmount);
 	}

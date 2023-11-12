@@ -13,10 +13,10 @@ public class CommandProcessor {
             CommandProcessorCreate commandProcessorCreate = new CommandProcessorCreate(bank);
             commandProcessorCreate.execute(commandParts);
         }
-//        else if ("deposit".equals(action)) {
-//            CommandProcessorDeposit commandProcessorDeposit = new CommandProcessorDeposit(bank);
-//            commandProcessorDeposit.execute(commandParts);
-//        }
+        else if ("deposit".equals(action)) {
+            CommandProcessorDeposit commandProcessorDeposit = new CommandProcessorDeposit(bank);
+            commandProcessorDeposit.execute(commandParts);
+        }
     }
 
 
