@@ -1,3 +1,5 @@
+package banking;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -52,6 +54,7 @@ public class MasterControlTest {
 
         List<String> actual = masterControl.start(input);
         assertSingleCommand(VALID_CREATE_CHECKING_COMMAND, actual);
+
     }
 
 

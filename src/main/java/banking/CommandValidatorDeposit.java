@@ -1,3 +1,4 @@
+package banking;
 
 public class CommandValidatorDeposit extends CommandValidator {
     public CommandValidatorDeposit(Bank bank) {
@@ -18,7 +19,7 @@ public class CommandValidatorDeposit extends CommandValidator {
 
         Account account =  bank.getAccounts().get(accountId);
         if (account == null) {
-            return false; // Account not found
+            return false; // banking.Account not found
         }
 
         String accountType = account.getAccountType();

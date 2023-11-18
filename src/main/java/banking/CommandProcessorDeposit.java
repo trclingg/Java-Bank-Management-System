@@ -1,3 +1,5 @@
+package banking;
+
 public class CommandProcessorDeposit extends CommandProcessor {
     public CommandProcessorDeposit(Bank bank) {
         super(bank);

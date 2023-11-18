@@ -1,6 +1,8 @@
+package banking;
 
 public class CommandValidator {
     public Bank bank;
+
 
     public CommandValidator(Bank bank){
         this.bank=bank;

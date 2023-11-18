@@ -1,3 +1,5 @@
+package banking;
+
 public class CommandProcessor {
     public Bank bank;
     private String commandChoiceType;
