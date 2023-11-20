@@ -63,6 +63,13 @@ public class AccountTest {
 		double actual = savingsAccount.getBalance();
 		assertEquals(0, actual);
 	}
+	@Test
+	public void withdraw_with_equal_amount_of_balance_will_go_to_0() {
+		savingsAccount.depositMoney(DEPOSIT);
+		savingsAccount.withdrawMoney(DEPOSIT);
+		double actual = savingsAccount.getBalance();
+		assertEquals(0, actual);
+	}
 
 	@Test
 	public void account_can_withdraw_money_twice() {
