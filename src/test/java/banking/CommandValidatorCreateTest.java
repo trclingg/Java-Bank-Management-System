@@ -241,4 +241,10 @@ public class CommandValidatorCreateTest {
         assertFalse(actual);
     }
 
+    @Test
+    public void command_with_one_argument_should_return_false() {
+        boolean actual = commandValidator.validateCommand("create");
+        assertFalse(actual);
+    }
+
 }

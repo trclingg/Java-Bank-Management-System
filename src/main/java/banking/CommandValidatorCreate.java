@@ -87,7 +87,7 @@ public class CommandValidatorCreate extends CommandValidator {
         if (initialAmountValue == null) {
             return false; // Missing initial amount for "CD" account type
         }
-        try {
+
             double initialAmount = Double.parseDouble(initialAmountValue);
 
             if (initialAmount >= 1000 && initialAmount <= 10000) {
@@ -96,9 +96,7 @@ public class CommandValidatorCreate extends CommandValidator {
                     return true; // Valid initial amount within the range [1000, 10000] with 0, 1, or 2 decimal places
                 }
             }
-        } catch (NumberFormatException e) {
-            // Invalid initial amount: Not a valid number
-        }
+
 
         return false; // Invalid initial amount for other reasons
     }

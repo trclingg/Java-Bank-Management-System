@@ -12,10 +12,7 @@ public class CommandProcessorDeposit extends CommandProcessor {
 
     }
     private double parseStringToDouble(String string) {
-        try {
+
             return Double.parseDouble(string);
-        } catch (NumberFormatException e) {
-            return -1; // Invalid deposit amount
-        }
     }
 }
