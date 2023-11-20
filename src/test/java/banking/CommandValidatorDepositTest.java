@@ -181,5 +181,10 @@ public class CommandValidatorDepositTest {
         assertFalse(actual);
     }
 
+    @Test
+    public void deposit_in_cd_account_is_invalid() {
+        boolean actual = commandValidator.validateCommand("Deposit 01010101 500");
+        assertFalse(actual);
+    }
 
 }

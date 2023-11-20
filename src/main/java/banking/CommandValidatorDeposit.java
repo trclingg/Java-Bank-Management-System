@@ -43,7 +43,6 @@ public class CommandValidatorDeposit extends CommandValidator {
     }
 
     private boolean isValidCheckingDeposit(String depositAmount) {
-        try {
             double amount = parseDepositAmount(depositAmount);
             if (amount >= 0 && amount <= 1000) {
                 String amountStr = Double.toString(amount);
@@ -52,14 +51,12 @@ public class CommandValidatorDeposit extends CommandValidator {
                     return true;
                 }
             }
-        } catch (NumberFormatException e) {
-            // Handle the exception if the conversion to double fails
-        }
+
         return false;
     }
 
     private boolean isValidSavingsDeposit(String depositAmount) {
-        try {
+
             double amount = parseDepositAmount(depositAmount);
             if (amount >= 0 && amount <= 2500) {
                 String amountStr = Double.toString(amount);
@@ -68,18 +65,13 @@ public class CommandValidatorDeposit extends CommandValidator {
                     return true;
                 }
             }
-        } catch (NumberFormatException e) {
-            // Handle the exception if the conversion to double fails
-        }
+
         return false;
     }
 
     private double parseDepositAmount(String depositAmount) {
-        try {
             return Double.parseDouble(depositAmount);
-        } catch (NumberFormatException e) {
-            return -1; // Invalid deposit amount
-        }
+
     }
 
 }
