@@ -5,7 +5,9 @@ public abstract class Account {
 	private double apr;
 
 	private String accountId;
-	protected Account( String accountId ,double apr) {
+	private int age = 0;
+
+	protected Account(String accountId, double apr) {
 		this.accountId = accountId;
 		this.apr = apr;
 	}
@@ -23,17 +25,30 @@ public abstract class Account {
 	}
 
 	public void withdrawMoney(double withdrawalAmount) {
-		if (balance < withdrawalAmount) {
+		if (balance <= withdrawalAmount) {
 			balance = 0;
 		} else {
 			balance -= withdrawalAmount;
 		}
 	}
+
 	public abstract String getAccountType();
+
+	public abstract boolean isValidDeposit(String depositAmount);
 
 	public String getAccountID() {
 		return accountId;
 	}
-	
-}
 
+	public abstract boolean isWithdrawalTimeValid();
+
+	public abstract boolean isWithdrawalAmountValid(String withdrawAmount);
+
+	public void increaseAge(int months) {
+		this.age += months;
+	}
+
+	public int getAge() {
+		return age;
+	}
+}
