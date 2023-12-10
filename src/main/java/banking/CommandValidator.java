@@ -41,6 +41,16 @@ public class CommandValidator {
 			return withdrawValidator.validate(commandParts);
 		}
 
+		else if ("pass".equals(action)) {
+			CommandValidatorPassTime passTimeValidator = new CommandValidatorPassTime(bank);
+			return passTimeValidator.validate(commandParts);
+		}
+
+//		else if ("transfer".equals(action)) {
+//			CommandValidatorTransfer transferValidator = new CommandValidatorTransfer(bank);
+//			return CtransferValidator.validate(commandParts);
+//		}
+
 		return false;
 	}
 }
