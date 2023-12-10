@@ -158,7 +158,7 @@ public class CommandValidatorWithdrawTest {
 
 	@Test
 	void savings_account_can_withdraw_at_max_one_time_per_month() {
-		bank.bankProcessMoneyWithdrawal(ACCOUNT_ID, 200);
+		bank.withdrawMoneyById(ACCOUNT_ID, 200);
 		boolean actual = commandValidator.validateCommand("withdraw 12345678 200");
 		assertFalse(actual);
 	}

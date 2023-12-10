@@ -11,7 +11,7 @@ public class CommandValidatorPassTime extends CommandValidator {
 		try {
 			String passMonth = commandParts[1];
 
-			if (commandParts.length != 2 || IsPassTimeValid(passMonth)) {
+			if (commandParts.length != 2 || !IsPassTimeValid(passMonth)) {
 				return false;
 			}
 			return true;

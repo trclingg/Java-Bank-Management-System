@@ -28,7 +28,13 @@ public class Bank {
 	}
 
 	public void withdrawMoneyById(String accountId, double withdrawAmount) {
-		accounts.get(accountId).withdrawMoney(withdrawAmount);
+		Account account = accounts.get(accountId);
+		account.withdrawMoney(withdrawAmount);
+		if (account.getAccountType() == "savings") {
+			Savings savingsAccount = (Savings) account;
+			savingsAccount.changeWithdrawalStatus();
+
+		}
 	}
 
 	public boolean accountIdAlreadyExists(String accountId) {
@@ -52,17 +58,6 @@ public class Bank {
 	public void bankCreateCDAccount(String accountId, double apr, double balance) {
 		CertificateDeposit cdAccount = new CertificateDeposit(accountId, apr, balance);
 		accounts.put(accountId, cdAccount);
-	}
-
-	public void bankProcessMoneyWithdrawal(String accountId, double withdrawAmount) {
-		Account account = accounts.get(accountId);
-		account.withdrawMoney(withdrawAmount);
-		if (account.getAccountType() == "savings") {
-			Savings savingsAccount = (Savings) account;
-			savingsAccount.changeWithdrawalStatus();
-
-		}
-
 	}
 
 }
