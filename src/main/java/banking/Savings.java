@@ -37,10 +37,23 @@ public class Savings extends Account {
 	@Override
 	public boolean isWithdrawalAmountValid(String withdrawAmount) {
 		double amount = Double.parseDouble(withdrawAmount);
+
 		if (amount >= 0 && amount <= 1000.0) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public void changeWithdrawalStatus() {
+		withdrawalMadeThisMonth = !withdrawalMadeThisMonth;
+		System.out.println("made:" + withdrawalMadeThisMonth);
+
+	}
+
+	@Override
+	public void increaseAge(int months) {
+		super.increaseAge(months);
+		withdrawalMadeThisMonth = false;
 	}
 }

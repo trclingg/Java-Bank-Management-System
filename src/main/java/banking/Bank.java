@@ -40,7 +40,7 @@ public class Bank {
 	}
 
 	public void bankCreateCheckingAccount(String accountId, double apr) {
-		Checking checkingAccount = new Checking(accountId,apr);
+		Checking checkingAccount = new Checking(accountId, apr);
 		accounts.put(accountId, checkingAccount);
 	}
 
@@ -52,6 +52,17 @@ public class Bank {
 	public void bankCreateCDAccount(String accountId, double apr, double balance) {
 		CertificateDeposit cdAccount = new CertificateDeposit(accountId, apr, balance);
 		accounts.put(accountId, cdAccount);
+	}
+
+	public void bankProcessMoneyWithdrawal(String accountId, double withdrawAmount) {
+		Account account = accounts.get(accountId);
+		account.withdrawMoney(withdrawAmount);
+		if (account.getAccountType() == "savings") {
+			Savings savingsAccount = (Savings) account;
+			savingsAccount.changeWithdrawalStatus();
+
+		}
+
 	}
 
 }

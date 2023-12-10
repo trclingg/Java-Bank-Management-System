@@ -46,25 +46,25 @@ public class CommandValidatorDepositTest {
 	}
 
 	@Test
-	void extra_space_beginning() {
+	void deposit_command_with_extra_space_beginning() {
 		boolean actual = commandValidator.validateCommand("    Deposit 12345678 500");
 		assertFalse(actual);
 	}
 
 	@Test
-	void extra_space_middle() {
+	void deposit_command_with_extra_space_middle() {
 		boolean actual = commandValidator.validateCommand("Deposit      12345678 500");
 		assertFalse(actual);
 	}
 
 	@Test
-	void extra_space_end() {
+	void deposit_command_with_extra_space_end() {
 		boolean actual = commandValidator.validateCommand("Deposit 12345678 500     ");
 		assertTrue(actual);
 	}
 
 	@Test
-	void case_insensitive_action_command() {
+	void case_insensitive_deposit_command() {
 		boolean actual = commandValidator.validateCommand("DepoSIt 12345678 500");
 		assertTrue(actual);
 	}
@@ -202,9 +202,9 @@ public class CommandValidatorDepositTest {
 	}
 
 	@Test
-	void deposit_command_with_ending_extra_space_is_valid() {
-		boolean actual = commandValidator.validateCommand("Deposit 12345678 500   ");
-		assertTrue(actual);
+	void cant_deposit_without_adding_account_in_bank() {
+		boolean actual = commandValidator.validateCommand("Deposit 22222222 100");
+		assertFalse(actual);
 	}
 
 }
