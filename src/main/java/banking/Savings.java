@@ -15,12 +15,10 @@ public class Savings extends Account {
 	@Override
 	public boolean isValidDeposit(String depositAmount) {
 		double amount = Double.parseDouble(depositAmount);
-		if (amount >= 0 && amount <= 2500) {
-			String amountStr = Double.toString(amount);
-			String[] parts = amountStr.split("\\.");
-			if (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2)) {
-				return true;
-			}
+		if (amount >= 0 && amount <= 2500 && numberIsInCorrectDecimalForm(depositAmount)) {
+
+			return true;
+
 		}
 
 		return false;
@@ -38,7 +36,7 @@ public class Savings extends Account {
 	public boolean isWithdrawalAmountValid(String withdrawAmount) {
 		double amount = Double.parseDouble(withdrawAmount);
 
-		if (amount >= 0 && amount <= 1000.0) {
+		if (amount >= 0 && amount <= 1000.0 && numberIsInCorrectDecimalForm(withdrawAmount)) {
 			return true;
 		} else {
 			return false;

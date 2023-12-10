@@ -42,9 +42,6 @@ public class CommandValidatorTransfer extends CommandValidator {
 		if (bank.getAccountById(accountIDFrom).getAccountType().equals("cd")
 				|| bank.getAccountById(accountIDTo).getAccountType().equals("cd")) {
 			return false;
-		} else if (bank.getAccountById(accountIDFrom).getAccountType()
-				.equals(bank.getAccountById(accountIDTo).getAccountType())) {
-			return false;
 		}
 		return true;
 	}

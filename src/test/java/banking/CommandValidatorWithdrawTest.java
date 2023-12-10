@@ -163,4 +163,22 @@ public class CommandValidatorWithdrawTest {
 		assertFalse(actual);
 	}
 
+	@Test
+	void withdraw_amount_can_double_one_decimal_place() {
+		boolean actual = commandValidator.validateCommand("withdraw 12345678 200.2");
+		assertTrue(actual);
+	}
+
+	@Test
+	void withdraw_amount_can_be_double_two_decimal_place() {
+		boolean actual = commandValidator.validateCommand("withdraw 12345678 200.35");
+		assertTrue(actual);
+	}
+
+	@Test
+	void withdraw_amount_cannot_be_double_more_than_two_decimal_place() {
+		boolean actual = commandValidator.validateCommand("withdraw 12345678 200.005");
+		assertFalse(actual);
+	}
+
 }

@@ -12,9 +12,6 @@ public class CommandValidatorDepositTest {
 
 	public static final String ACCOUNT_ID_2 = "01010101";
 	CommandValidator commandValidator;
-	Savings savingsAccount;
-	CertificateDeposit cdAccount;
-	Checking checkingAccount;
 	Bank bank;
 
 	@BeforeEach

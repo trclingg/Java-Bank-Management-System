@@ -14,13 +14,8 @@ public class Checking extends Account {
 	@Override
 	public boolean isValidDeposit(String depositAmount) {
 		double amount = Double.parseDouble(depositAmount);
-		if (amount >= 0 && amount <= 1000) {
-			String amountStr = Double.toString(amount);
-			String[] parts = amountStr.split("\\.");
-			if (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2)) {
-				return true;
-			}
-
+		if (amount >= 0 && amount <= 1000 && numberIsInCorrectDecimalForm(depositAmount)) {
+			return true;
 		}
 		return false;
 	}
@@ -33,7 +28,7 @@ public class Checking extends Account {
 	@Override
 	public boolean isWithdrawalAmountValid(String withdrawAmount) {
 		double amount = Double.parseDouble(withdrawAmount);
-		if (amount >= 0 && amount <= 400.0) {
+		if (amount >= 0 && amount <= 400.0 && numberIsInCorrectDecimalForm(withdrawAmount)) {
 			return true;
 		} else {
 			return false;

@@ -27,7 +27,7 @@ public class CertificateDeposit extends Account {
 	@Override
 	public boolean isWithdrawalAmountValid(String withdrawAmount) {
 		double amount = Double.parseDouble(withdrawAmount);
-		if (amount >= super.getBalance()) {
+		if (amount >= super.getBalance() && numberIsInCorrectDecimalForm(withdrawAmount)) {
 			return true;
 		}
 		return false;
