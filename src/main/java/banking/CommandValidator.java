@@ -46,10 +46,10 @@ public class CommandValidator {
 			return passTimeValidator.validate(commandParts);
 		}
 
-//		else if ("transfer".equals(action)) {
-//			CommandValidatorTransfer transferValidator = new CommandValidatorTransfer(bank);
-//			return CtransferValidator.validate(commandParts);
-//		}
+		else if ("transfer".equals(action)) {
+			CommandValidatorTransfer transferValidator = new CommandValidatorTransfer(bank);
+			return transferValidator.validate(commandParts);
+		}
 
 		return false;
 	}
