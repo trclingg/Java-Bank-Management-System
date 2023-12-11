@@ -13,11 +13,8 @@ public class CommandValidatorTransfer extends CommandValidator {
 			String accountIDTo = commandParts[2];
 			String transferAmount = commandParts[3];
 
-			if (commandParts.length != 4 || !accountsAreValid(accountIDFrom, accountIDTo)
-					|| !amountTransferIsValid(accountIDFrom, accountIDTo, transferAmount)) {
-				return false;
-			}
-			return true;
+			return (!(commandParts.length != 4 || !accountsAreValid(accountIDFrom, accountIDTo)
+					|| !amountTransferIsValid(accountIDFrom, accountIDTo, transferAmount)));
 
 		} catch (Exception e) {
 			return false;
@@ -39,20 +36,13 @@ public class CommandValidatorTransfer extends CommandValidator {
 		}
 
 		// check account type
-		if (bank.getAccountById(accountIDFrom).getAccountType().equals("cd")
-				|| bank.getAccountById(accountIDTo).getAccountType().equals("cd")) {
-			return false;
-		}
-		return true;
+		return (!(bank.getAccountById(accountIDFrom).getAccountType().equals("cd")
+				|| bank.getAccountById(accountIDTo).getAccountType().equals("cd")));
 	}
 
 	private boolean amountTransferIsValid(String accountIDFrom, String accountIDTo, String transferAmount) {
-		Double transferAmountNum = Double.parseDouble(transferAmount);
-		if (transferAmountNum >= 0 && bank.getAccountById(accountIDFrom).isWithdrawalAmountValid(transferAmount)
-				&& bank.getAccountById(accountIDTo).isValidDeposit(transferAmount)) {
-			return true;
-		} else {
-			return false;
-		}
+		double transferAmountNum = Double.parseDouble(transferAmount);
+		return (transferAmountNum >= 0 && bank.getAccountById(accountIDFrom).isWithdrawalAmountValid(transferAmount)
+				&& bank.getAccountById(accountIDTo).isValidDeposit(transferAmount));
 	}
 }

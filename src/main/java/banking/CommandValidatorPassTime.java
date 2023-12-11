@@ -11,10 +11,7 @@ public class CommandValidatorPassTime extends CommandValidator {
 		try {
 			String passMonth = commandParts[1];
 
-			if (commandParts.length != 2 || !IsPassTimeValid(passMonth)) {
-				return false;
-			}
-			return true;
+			return (!(commandParts.length != 2 || !IsPassTimeValid(passMonth)));
 
 		} catch (Exception e) {
 			return false;
@@ -23,9 +20,6 @@ public class CommandValidatorPassTime extends CommandValidator {
 
 	private boolean IsPassTimeValid(String passMonth) {
 		int numPassMonth = Integer.parseInt(passMonth);
-		if (numPassMonth > 0 && numPassMonth <= 60) {
-			return true;
-		}
-		return false;
+		return (numPassMonth > 0 && numPassMonth <= 60);
 	}
 }

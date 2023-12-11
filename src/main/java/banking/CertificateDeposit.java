@@ -18,22 +18,14 @@ public class CertificateDeposit extends Account {
 
 	@Override
 	public boolean isWithdrawalTimeValid() {
-		if (super.getAge() >= 12) {
-			return true;
-		}
-
-		return false;
+		return (super.getAge() >= 12);
 	}
 
 	@Override
 	public boolean isWithdrawalAmountValid(String withdrawAmount) {
 		double amount = Double.parseDouble(withdrawAmount);
-//&& numberIsInCorrectDecimalForm(withdrawAmount)
-		if (amount >= super.getBalance()) {
 
-			return true;
-		}
-		return false;
+		return (amount >= super.getBalance());
 	}
 
 	@Override

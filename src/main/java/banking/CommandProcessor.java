@@ -2,7 +2,6 @@ package banking;
 
 public class CommandProcessor {
 	public Bank bank;
-	private String commandChoiceType;
 
 	public CommandProcessor(Bank bank) {
 		this.bank = bank;
@@ -11,6 +10,7 @@ public class CommandProcessor {
 	public void execute(String commandString) {
 		String[] commandParts = commandString.split(" ");
 		String action = commandParts[0].toLowerCase();
+
 		if ("create".equals(action)) {
 			CommandProcessorCreate commandProcessorCreate = new CommandProcessorCreate(bank);
 			commandProcessorCreate.execute(commandParts);

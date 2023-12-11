@@ -1,11 +1,11 @@
 package banking;
 
 public class CommandProcessorCreate extends CommandProcessor {
-	private String accountType;
-	private String accountID;
-	private String aprString;
-	private double apr;
-	private double balance;
+	String accountType;
+	String accountID;
+	String aprString;
+	double apr;
+	double balance;
 
 	public CommandProcessorCreate(Bank bank) {
 		super(bank);

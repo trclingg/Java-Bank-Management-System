@@ -3,10 +3,10 @@ package banking;
 import java.util.List;
 
 public class MasterControl {
-	private CommandProcessor commandProcessor;
-	private CommandValidator commandValidator;
-	private CommandStorage commandStorage;
-	private GetOutput getOutput;
+	private final CommandProcessor commandProcessor;
+	private final CommandValidator commandValidator;
+	private final CommandStorage commandStorage;
+	private final GetOutput getOutput;
 
 	public MasterControl(CommandValidator commandValidator, CommandProcessor commandProcessor,
 			CommandStorage commandStorage, GetOutput getOutput) {

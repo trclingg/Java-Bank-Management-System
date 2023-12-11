@@ -1,9 +1,9 @@
 package banking;
 
 public abstract class Account {
+	private final double apr;
+	private final String accountId;
 	double balance;
-	private double apr;
-	private String accountId;
 	private int age = 0;
 
 	protected Account(String accountId, double apr) {
@@ -53,15 +53,12 @@ public abstract class Account {
 
 	public boolean numberIsInCorrectDecimalForm(String testNumber) {
 		String[] parts = testNumber.split("\\.");
-		if (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2)) {
-			return true;
-		}
+		return (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2));
 
-		return false;
 	}
 
 	public void calculateAPR() {
-		Double calculation = (apr / 100) / 12 * balance;
+		double calculation = (apr / 100) / 12 * balance;
 		balance = calculation + balance;
 	}
 

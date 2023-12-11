@@ -12,14 +12,8 @@ public class CommandValidator {
 	}
 
 	public boolean isValidAccountType(String accountType) {
-		if (accountType.equalsIgnoreCase("checking")) {
-			return true;
-		} else if (accountType.equalsIgnoreCase("savings")) {
-			return true;
-		} else if (accountType.equalsIgnoreCase("cd")) {
-			return true;
-		}
-		return false;
+		return (accountType.equalsIgnoreCase("checking") || accountType.equalsIgnoreCase("savings")
+				|| (accountType.equalsIgnoreCase("cd")));
 	}
 
 	public boolean validateCommand(String string) {

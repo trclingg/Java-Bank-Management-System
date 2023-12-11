@@ -36,7 +36,7 @@ public class CommandStorage {
 		} else if (commandType.equalsIgnoreCase("transfer")) {
 			insertToValidCommandHashMap(validCommands, splitString[1], formattedValidCommand);
 			insertToValidCommandHashMap(validCommands, splitString[2], formattedValidCommand);
-		} else if (commandType.equalsIgnoreCase("create") && (validCommands.containsKey(splitString[2]))) {
+		} else if (commandType.equalsIgnoreCase("create")) {
 			validCommands.remove(splitString[2]);
 		}
 	}

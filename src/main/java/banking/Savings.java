@@ -15,32 +15,19 @@ public class Savings extends Account {
 	@Override
 	public boolean isValidDeposit(String depositAmount) {
 		double amount = Double.parseDouble(depositAmount);
-		if (amount >= 0 && amount <= 2500 && numberIsInCorrectDecimalForm(depositAmount)) {
-
-			return true;
-
-		}
-
-		return false;
+		return (amount >= 0 && amount <= 2500 && numberIsInCorrectDecimalForm(depositAmount));
 	}
 
 	@Override
 	public boolean isWithdrawalTimeValid() {
-		if (withdrawalMadeThisMonth == true) {
-			return false;
-		}
-		return true;
+		return (!(withdrawalMadeThisMonth));
 	}
 
 	@Override
 	public boolean isWithdrawalAmountValid(String withdrawAmount) {
 		double amount = Double.parseDouble(withdrawAmount);
 
-		if (amount >= 0 && amount <= 1000.0 && numberIsInCorrectDecimalForm(withdrawAmount)) {
-			return true;
-		} else {
-			return false;
-		}
+		return (amount >= 0 && amount <= 1000.0 && numberIsInCorrectDecimalForm(withdrawAmount));
 	}
 
 	public void changeWithdrawalStatus() {

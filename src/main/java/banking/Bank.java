@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class Bank {
 
-	private Map<String, Account> accounts;
-	private ArrayList<String> accountOrder;
+	private final Map<String, Account> accounts;
+	private final ArrayList<String> accountOrder;
 
 	Bank() {
 		accounts = new HashMap<>();
@@ -35,7 +35,7 @@ public class Bank {
 		Account account = accounts.get(accountId);
 		account.withdrawMoney(withdrawAmount);
 
-		if (account.getAccountType() == "savings") {
+		if (account.getAccountType().equals("savings")) {
 			Savings savingsAccount = (Savings) account;
 			savingsAccount.changeWithdrawalStatus();
 
@@ -43,11 +43,7 @@ public class Bank {
 	}
 
 	public boolean accountIdAlreadyExists(String accountId) {
-		if (accounts.get(accountId) != null) {
-			return true;
-		} else {
-			return false;
-		}
+		return (accounts.get(accountId) != null);
 	}
 
 	public void bankCreateCheckingAccount(String accountId, double apr) {

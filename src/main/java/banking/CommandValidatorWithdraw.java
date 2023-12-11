@@ -16,8 +16,6 @@ public class CommandValidatorWithdraw extends CommandValidator {
 
 			}
 			Account account = bank.getAccounts().get(accountId);
-//			System.out.println(account.isWithdrawalAmountValid(withdrawAmount));
-//			System.out.println(account.isWithdrawalTimeValid());
 
 			return (account.isWithdrawalAmountValid(withdrawAmount) && account.isWithdrawalTimeValid());
 

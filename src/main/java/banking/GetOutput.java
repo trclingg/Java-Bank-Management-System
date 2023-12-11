@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GetOutput {
-	private Bank bank;
-	private CommandStorage commandStorage;
+	private final Bank bank;
+	private final CommandStorage commandStorage;
 
 	public GetOutput(Bank bank, CommandStorage commandStorage) {
 		this.bank = bank;
