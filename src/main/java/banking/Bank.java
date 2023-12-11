@@ -100,7 +100,7 @@ public class Bank {
 
 	public void transferMoneyBy2Ids(String accountIdFrom, String accountIdTo, double transferAmount) {
 		if (transferAmount >= getAccountById(accountIdFrom).getBalance()) {
-			double actualAmount = getAccountById(accountIdTo).getBalance();
+			double actualAmount = getAccountById(accountIdFrom).getBalance();
 			depositMoneyById(accountIdTo, actualAmount);
 			getAccountById(accountIdFrom).withdrawMoney(actualAmount);
 		} else {

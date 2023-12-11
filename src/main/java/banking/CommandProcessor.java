@@ -23,6 +23,16 @@ public class CommandProcessor {
 			CommandProcessorWithdraw commandProcessorWithdraw = new CommandProcessorWithdraw(bank);
 			commandProcessorWithdraw.execute(commandParts);
 		}
+
+		else if ("pass".equals(action)) {
+			CommandProcessorPassTime commandProcessorPassTime = new CommandProcessorPassTime(bank);
+			commandProcessorPassTime.execute(commandParts);
+		}
+
+		else if ("transfer".equals(action)) {
+			CommandProcessorTransfer commandProcessorTransfer = new CommandProcessorTransfer(bank);
+			commandProcessorTransfer.execute(commandParts);
+		}
 	}
 
 }

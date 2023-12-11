@@ -9,6 +9,7 @@ public class CommandProcessorTransfer extends CommandProcessor {
 		String accountIdFrom = splitString[1];
 		String accountIdTo = splitString[2];
 		double transferAmount = Double.parseDouble(splitString[3]);
+
 		bank.transferMoneyBy2Ids(accountIdFrom, accountIdTo, transferAmount);
 	}
 
