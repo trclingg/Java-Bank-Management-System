@@ -16,7 +16,7 @@ public class AccountTest {
 
 	@BeforeEach
 	public void setUp() {
-		savingsAccount = new Savings("12345678",APR);
+		savingsAccount = new Savings("12345678", APR);
 	}
 
 	@Test
@@ -63,6 +63,7 @@ public class AccountTest {
 		double actual = savingsAccount.getBalance();
 		assertEquals(0, actual);
 	}
+
 	@Test
 	public void withdraw_with_equal_amount_of_balance_will_go_to_0() {
 		savingsAccount.depositMoney(DEPOSIT);
@@ -78,6 +79,20 @@ public class AccountTest {
 		savingsAccount.withdrawMoney(WITHDRAWAL);
 		double actual = savingsAccount.getBalance();
 		assertEquals(DEPOSIT * 3 - WITHDRAWAL * 2, actual);
+	}
+
+	@Test
+	public void account_returns_age() {
+		savingsAccount.increaseAge(1);
+		double actual = savingsAccount.getAge();
+		assertEquals(actual, 1);
+	}
+
+	@Test
+	public void account_apr_is_supplied_value() {
+		double actual = savingsAccount.getApr();
+		assertEquals(APR, actual);
+
 	}
 
 }

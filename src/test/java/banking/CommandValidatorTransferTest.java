@@ -183,14 +183,26 @@ public class CommandValidatorTransferTest {
 	}
 
 	@Test
-	void transfer_should_follow_withdraw_rule_of_sending_account() {
-		boolean actual = commandValidator.validateCommand("transfer 11111111 33333333 1500");
+	void transfer_from_savings_account_cannot_have_amount_greater_than_1000() {
+		boolean actual = commandValidator.validateCommand("transfer 12345678 89456185 1001");
 		assertFalse(actual);
 	}
 
 	@Test
-	void transfer_should_follow_deposit_rule_of_receiving_account() {
-		boolean actual = commandValidator.validateCommand("transfer 11111111 22222222 1500");
+	void transfer_from_savings_account_can_have_amount_at_max_1000() {
+		boolean actual = commandValidator.validateCommand("transfer 12345678 89456185 1000");
+		assertTrue(actual);
+	}
+
+	@Test
+	void transfer_from_checking_account_can_have_amount_at_max_400() {
+		boolean actual = commandValidator.validateCommand("transfer 89456185 12345678 400");
+		assertTrue(actual);
+	}
+
+	@Test
+	void transfer_from_checking_account_cannot_have_amount_greater_than_400() {
+		boolean actual = commandValidator.validateCommand("transfer 89456185 12345678 401");
 		assertFalse(actual);
 	}
 

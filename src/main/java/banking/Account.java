@@ -3,7 +3,6 @@ package banking;
 public abstract class Account {
 	double balance;
 	private double apr;
-
 	private String accountId;
 	private int age = 0;
 
@@ -61,7 +60,8 @@ public abstract class Account {
 	}
 
 	public void calculateAPR() {
-		balance += ((apr / 100) / 12) * balance;
+		Double calculation = (apr / 100) / 12 * balance;
+		balance = calculation + balance;
 	}
 
 }

@@ -17,8 +17,8 @@ public class BankTest {
 	@BeforeEach
 	public void setUp() {
 		bank = new Bank();
-		savingsAccount = new Savings("12345678",AccountTest.APR);
-		cdAccount = new CertificateDeposit("28282828",AccountTest.APR, AccountTest.DEPOSIT);
+		savingsAccount = new Savings("12345678", AccountTest.APR);
+		cdAccount = new CertificateDeposit("28282828", AccountTest.APR, AccountTest.DEPOSIT);
 	}
 
 	@Test
@@ -76,6 +76,12 @@ public class BankTest {
 		bank.withdrawMoneyById(ACCOUNT_ID, AccountTest.WITHDRAWAL);
 		assertEquals(AccountTest.DEPOSIT + AccountTest.BALANCE - AccountTest.WITHDRAWAL * 2,
 				bank.getAccounts().get(ACCOUNT_ID).getBalance());
+	}
+
+	@Test
+	public void retrieve_an_account_through_ID() {
+		bank.bankCreateCheckingAccount(ACCOUNT_ID_1, AccountTest.APR);
+		assertEquals(ACCOUNT_ID_1, bank.getAccounts().get(ACCOUNT_ID_1).getAccountID());
 	}
 
 }

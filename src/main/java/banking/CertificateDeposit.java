@@ -21,15 +21,25 @@ public class CertificateDeposit extends Account {
 		if (super.getAge() >= 12) {
 			return true;
 		}
+
 		return false;
 	}
 
 	@Override
 	public boolean isWithdrawalAmountValid(String withdrawAmount) {
 		double amount = Double.parseDouble(withdrawAmount);
-		if (amount >= super.getBalance() && numberIsInCorrectDecimalForm(withdrawAmount)) {
+//&& numberIsInCorrectDecimalForm(withdrawAmount)
+		if (amount >= super.getBalance()) {
+
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public void calculateAPR() {
+		for (int counter = 0; counter < 4; counter++) {
+			super.calculateAPR();
+		}
 	}
 }

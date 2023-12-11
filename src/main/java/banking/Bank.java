@@ -12,6 +12,7 @@ public class Bank {
 
 	Bank() {
 		accounts = new HashMap<>();
+		accountOrder = new ArrayList<>();
 	}
 
 	public Map<String, Account> getAccounts() {
@@ -52,16 +53,19 @@ public class Bank {
 	public void bankCreateCheckingAccount(String accountId, double apr) {
 		Checking checkingAccount = new Checking(accountId, apr);
 		accounts.put(accountId, checkingAccount);
+		accountOrder.add(accountId);
 	}
 
 	public void bankCreateSavingsAccount(String accountId, double apr) {
 		Savings savingsAccount = new Savings(accountId, apr);
 		accounts.put(accountId, savingsAccount);
+		accountOrder.add(accountId);
 	}
 
 	public void bankCreateCDAccount(String accountId, double apr, double balance) {
 		CertificateDeposit cdAccount = new CertificateDeposit(accountId, apr, balance);
 		accounts.put(accountId, cdAccount);
+		accountOrder.add(accountId);
 	}
 
 	public void passTime(int months) {
@@ -70,7 +74,6 @@ public class Bank {
 		for (int counter = 0; counter < months; counter++) {
 			updateAccounts(accountsToRemove);
 		}
-
 		removeAccounts(accountsToRemove);
 	}
 

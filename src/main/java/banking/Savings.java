@@ -45,7 +45,6 @@ public class Savings extends Account {
 
 	public void changeWithdrawalStatus() {
 		withdrawalMadeThisMonth = !withdrawalMadeThisMonth;
-		System.out.println("made:" + withdrawalMadeThisMonth);
 
 	}
 
