@@ -1,11 +1,14 @@
 package banking;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Bank {
 
 	private Map<String, Account> accounts;
+	private ArrayList<String> accountOrder;
 
 	Bank() {
 		accounts = new HashMap<>();
@@ -61,4 +64,37 @@ public class Bank {
 		accounts.put(accountId, cdAccount);
 	}
 
+	public void passTime(int months) {
+		List<String> accountsToRemove = new ArrayList<>();
+
+		for (int counter = 0; counter < months; counter++) {
+			updateAccounts(accountsToRemove);
+		}
+
+		removeAccounts(accountsToRemove);
+	}
+
+	private void updateAccounts(List<String> accountsToRemove) {
+		for (String accountId : accounts.keySet()) {
+			Account account = accounts.get(accountId);
+			if (account.balance == 0) {
+				accountsToRemove.add(accountId);
+			} else if (account.balance < 100) {
+				withdrawMoneyById(accountId, 25);
+			}
+			account.calculateAPR();
+			account.increaseAge(1);
+		}
+	}
+
+	private void removeAccounts(List<String> accountsToRemove) {
+		for (String accountID : accountsToRemove) {
+			accountOrder.remove(accountID);
+			accounts.remove(accountID);
+		}
+	}
+
+	public List<String> getAccountOrder() {
+		return accountOrder;
+	}
 }
