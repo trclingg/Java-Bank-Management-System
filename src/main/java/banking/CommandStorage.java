@@ -30,6 +30,7 @@ public class CommandStorage {
 		String[] splitString = inputString.split(" ");
 		String commandType = splitString[0];
 		String formattedValidCommand = formatValidCommand(splitString);
+
 		if (commandType.equalsIgnoreCase("withdraw") || commandType.equalsIgnoreCase("deposit")) {
 			insertToValidCommandHashMap(validCommands, splitString[1], formattedValidCommand);
 		} else if (commandType.equalsIgnoreCase("transfer")) {

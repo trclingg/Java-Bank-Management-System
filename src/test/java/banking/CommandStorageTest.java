@@ -10,7 +10,8 @@ public class CommandStorageTest {
 	private final String INVALID_COMMAND = "foobar blah blah";
 	private final String INVALID_COMMAND_2 = "create create";
 	private final String VALID_COMMAND_1 = "cReate savings 12345678 2";
-	private final String VALID_COMMAND_2 = "Deposit 12345678 400";
+	private final String VALID_COMMAND_2 = "deposit 12345678 400";
+	private final String VALID_COMMAND_2_1 = "Deposit 12345678 400";
 	private final String VALID_COMMAND_3 = "Transfer 12345678 28282828 300";
 	private final String VALID_COMMAND_4 = "Deposit 28282828 600";
 	private final String VALID_COMMAND_5 = "Withdraw 12345678 500";
@@ -73,7 +74,7 @@ public class CommandStorageTest {
 		bank.bankCreateSavingsAccount(ACCOUNT_ID_1, 2);
 		commandStorage.addValidCommand(VALID_COMMAND_2);
 		String actual = commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(0);
-		assertEquals(VALID_COMMAND_2, actual);
+		assertEquals(VALID_COMMAND_2_1, actual);
 	}
 
 	@Test
@@ -84,7 +85,7 @@ public class CommandStorageTest {
 		String actual1 = commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(0);
 		String actual2 = commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(1);
 
-		assertEquals(VALID_COMMAND_2, actual1);
+		assertEquals(VALID_COMMAND_2_1, actual1);
 		assertEquals(VALID_COMMAND_5, actual2);
 	}
 
@@ -94,7 +95,7 @@ public class CommandStorageTest {
 		bank.bankCreateCheckingAccount(ACCOUNT_ID_2, 2);
 		commandStorage.addValidCommand(VALID_COMMAND_2);
 		commandStorage.addValidCommand(VALID_COMMAND_4);
-		assertEquals(VALID_COMMAND_2, commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(0));
+		assertEquals(VALID_COMMAND_2_1, commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(0));
 		assertEquals(VALID_COMMAND_4, commandStorage.getValidCommands().get(ACCOUNT_ID_2).get(0));
 	}
 
@@ -105,7 +106,7 @@ public class CommandStorageTest {
 		commandStorage.addValidCommand(VALID_COMMAND_2);
 		commandStorage.addValidCommand(VALID_COMMAND_4);
 		commandStorage.addValidCommand(VALID_COMMAND_3);
-		assertEquals(VALID_COMMAND_2, commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(0));
+		assertEquals(VALID_COMMAND_2_1, commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(0));
 		assertEquals(VALID_COMMAND_3, commandStorage.getValidCommands().get(ACCOUNT_ID_1).get(1));
 		assertEquals(VALID_COMMAND_4, commandStorage.getValidCommands().get(ACCOUNT_ID_2).get(0));
 		assertEquals(VALID_COMMAND_3, commandStorage.getValidCommands().get(ACCOUNT_ID_2).get(1));

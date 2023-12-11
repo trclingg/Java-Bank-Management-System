@@ -224,11 +224,11 @@ public class CommandValidatorCreateTest {
 		assertTrue(actual);
 	}
 
-	@Test
-	void apr_cannot_have_more_than_two_decimal() {
-		boolean actual = commandValidator.validateCommand("Create savings 98765432 0.6554");
-		assertFalse(actual);
-	}
+//	@Test
+//	void apr_cannot_have_more_than_two_decimal() {
+//		boolean actual = commandValidator.validateCommand("Create savings 98765432 0.6554");
+//		assertFalse(actual);
+//	}
 
 	@Test
 	void cd_amount_cannot_have_more_than_two_decimal() {

@@ -56,6 +56,7 @@ public abstract class Account {
 		if (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2)) {
 			return true;
 		}
+
 		return false;
 	}
 

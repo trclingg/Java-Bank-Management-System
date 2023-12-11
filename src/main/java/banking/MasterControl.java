@@ -1,26 +1,31 @@
 package banking;
 
 import java.util.List;
+
 public class MasterControl {
-    private CommandProcessor commandProcessor;
-    private CommandValidator commandValidator;
-    private CommandStorage commandStorage;
+	private CommandProcessor commandProcessor;
+	private CommandValidator commandValidator;
+	private CommandStorage commandStorage;
+	private GetOutput getOutput;
 
-    public MasterControl(CommandValidator commandValidator, CommandProcessor commandProcessor,CommandStorage commandStorage) {
-        this.commandProcessor = commandProcessor;
-        this.commandStorage = commandStorage;
-        this.commandValidator = commandValidator;
-    }
+	public MasterControl(CommandValidator commandValidator, CommandProcessor commandProcessor,
+			CommandStorage commandStorage, GetOutput getOutput) {
+		this.commandProcessor = commandProcessor;
+		this.commandStorage = commandStorage;
+		this.commandValidator = commandValidator;
+		this.getOutput = getOutput;
+	}
 
-    public List<String> start(List<String> input) {
-        for (String command : input) {
-            if (commandValidator.validateCommand(command)) {
-                commandProcessor.execute(command);
-            } else {
-                commandStorage.addInvalidCommandToList(command);
-            }
-        }
+	public List<String> start(List<String> input) {
+		for (String command : input) {
+			if (commandValidator.validateCommand(command)) {
+				commandProcessor.execute(command);
+				commandStorage.addValidCommand(command);
+			} else {
+				commandStorage.addInvalidCommandToList(command);
+			}
+		}
 
-        return commandStorage.getInvalidCommands();
-    }
+		return getOutput.getOutput();
+	}
 }

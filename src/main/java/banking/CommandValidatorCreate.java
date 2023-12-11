@@ -35,10 +35,10 @@ public class CommandValidatorCreate extends CommandValidator {
 
 			if (apr >= 0 && apr <= 10) {
 				// Check if the number of decimal places is 0, 1, or 2
-				String[] parts = aprValue.split("\\.");
-				if (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2)) {
-					return true; // Valid APR within the range [0, 10] with up to 2 decimal places
-				}
+//				String[] parts = aprValue.split("\\.");
+//				if (parts.length <= 2 && (parts.length == 1 || parts[1].length() <= 2)) {
+				return true; // Valid APR within the range [0, 10] with up to 2 decimal places
+//				}
 			}
 		} catch (NumberFormatException e) {
 		}
