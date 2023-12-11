@@ -97,4 +97,15 @@ public class Bank {
 	public List<String> getAccountOrder() {
 		return accountOrder;
 	}
+
+	public void transferMoneyBy2Ids(String accountIdFrom, String accountIdTo, double transferAmount) {
+		if (transferAmount >= getAccountById(accountIdFrom).getBalance()) {
+			double actualAmount = getAccountById(accountIdTo).getBalance();
+			depositMoneyById(accountIdTo, actualAmount);
+			getAccountById(accountIdFrom).withdrawMoney(actualAmount);
+		} else {
+			depositMoneyById(accountIdTo, transferAmount);
+			getAccountById(accountIdFrom).withdrawMoney(transferAmount);
+		}
+	}
 }
