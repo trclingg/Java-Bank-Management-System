@@ -1,25 +1,28 @@
 package banking;
 
 public class CommandProcessor {
-    public Bank bank;
-    private String commandChoiceType;
+	public Bank bank;
+	private String commandChoiceType;
 
-    public CommandProcessor(Bank bank) {
-        this.bank=bank;
-    }
+	public CommandProcessor(Bank bank) {
+		this.bank = bank;
+	}
 
-    public void execute(String commandString) {
-        String[] commandParts = commandString.split(" ");
-        String action = commandParts[0].toLowerCase();
-        if ("create".equals(action)) {
-            CommandProcessorCreate commandProcessorCreate = new CommandProcessorCreate(bank);
-            commandProcessorCreate.execute(commandParts);
-        }
-        else if ("deposit".equals(action)) {
-            CommandProcessorDeposit commandProcessorDeposit = new CommandProcessorDeposit(bank);
-            commandProcessorDeposit.execute(commandParts);
-        }
-    }
+	public void execute(String commandString) {
+		String[] commandParts = commandString.split(" ");
+		String action = commandParts[0].toLowerCase();
+		if ("create".equals(action)) {
+			CommandProcessorCreate commandProcessorCreate = new CommandProcessorCreate(bank);
+			commandProcessorCreate.execute(commandParts);
+		} else if ("deposit".equals(action)) {
+			CommandProcessorDeposit commandProcessorDeposit = new CommandProcessorDeposit(bank);
+			commandProcessorDeposit.execute(commandParts);
+		}
 
+		else if ("withdraw".equals(action)) {
+			CommandProcessorWithdraw commandProcessorWithdraw = new CommandProcessorWithdraw(bank);
+			commandProcessorWithdraw.execute(commandParts);
+		}
+	}
 
 }

@@ -30,6 +30,7 @@ public class Bank {
 	public void withdrawMoneyById(String accountId, double withdrawAmount) {
 		Account account = accounts.get(accountId);
 		account.withdrawMoney(withdrawAmount);
+
 		if (account.getAccountType() == "savings") {
 			Savings savingsAccount = (Savings) account;
 			savingsAccount.changeWithdrawalStatus();

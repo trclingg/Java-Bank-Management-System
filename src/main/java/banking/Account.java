@@ -25,11 +25,13 @@ public abstract class Account {
 	}
 
 	public void withdrawMoney(double withdrawalAmount) {
+//		System.out.println("Bal Before" + balance);
 		if (balance <= withdrawalAmount) {
 			balance = 0;
 		} else {
 			balance -= withdrawalAmount;
 		}
+//		System.out.println("Bal After" + balance);
 	}
 
 	public abstract String getAccountType();
