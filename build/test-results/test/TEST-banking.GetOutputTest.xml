@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.GetOutputTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.007">
+  <properties/>
+  <testcase name="output_returns_2_correct_status()" classname="banking.GetOutputTest" time="0.001"/>
+  <testcase name="output_transaction_history_is_formatted()" classname="banking.GetOutputTest" time="0.0"/>
+  <testcase name="output_is_empty_initially()" classname="banking.GetOutputTest" time="0.0"/>
+  <testcase name="create_commands_not_included_in_transaction_history()" classname="banking.GetOutputTest" time="0.0"/>
+  <testcase name="output_two_account_status_with_their_transaction_histories()" classname="banking.GetOutputTest" time="0.003"/>
+  <testcase name="account_status_returns_correct_with_two_transaction_histories()" classname="banking.GetOutputTest" time="0.001"/>
+  <testcase name="output_returns_correct_status()" classname="banking.GetOutputTest" time="0.0"/>
+  <testcase name="account_status_returns_correct_with_one_transaction_history()" classname="banking.GetOutputTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

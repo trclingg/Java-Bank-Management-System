@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandValidatorWithdrawTest" tests="35" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:34" hostname="n3-95-225.dhcp.drexel.edu" time="0.04">
+  <properties/>
+  <testcase name="withdraw_command_with_extra_space_end()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_amount_for_checking_can_be_zero()" classname="banking.CommandValidatorWithdrawTest" time="0.002"/>
+  <testcase name="withdraw_amount_for_savings_can_be_more_than_balance_but_under_max_value()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="CD_withdrawal_valid_if_age_is_above_12_months()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_amount_for_checking_accepts_above_min_value()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_command_with_exceeded_words_is_invalid()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="CD_can_withdraw_equal_to_balance()" classname="banking.CommandValidatorWithdrawTest" time="0.009"/>
+  <testcase name="savings_account_can_withdraw_at_max_one_time_per_month()" classname="banking.CommandValidatorWithdrawTest" time="0.004"/>
+  <testcase name="withdraw_amount_must_be_digits()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_amount_for_savings_cant_be_more_than_1000()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_amount_cannot_be_double_more_than_two_decimal_place()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="CD_can_withdraw_value_greater_than_balance()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_amount_for_savings_cant_be_negative()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_amount_for_savings_accepts_above_min_value()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="CD_withdrawal_invalid_if_age_below_12_months()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_command_with_extra_space_middle()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="case_insensitive_withdraw_command()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="missing_command()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_amount_for_checking_can_be_more_than_balance_but_under_max_value()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_amount_for_checking_amount_accepts_max_value_400()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_is_valid()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="savings_account_cannot_withdraw_if_another_withdraw_happened_in_the_same_month()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_amount_for_savings_can_be_zero()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_amount_can_be_double_two_decimal_place()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_command_with_length_one_is_invalid()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_command_with_extra_space_beginning()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="cant_withdraw_without_adding_account_in_bank()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="CD_withdrawal_valid_if_age_is_12_months()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_amount_can_double_one_decimal_place()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_amount_for_checking_cant_be_more_than_4000()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="savings_account_can_withdraw_if_one_month_passed_after_previous_withdrawal()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="invalid_withdraw_command()" classname="banking.CommandValidatorWithdrawTest" time="0.001"/>
+  <testcase name="checking_can_withdraw_twice()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="CD_cannot_withdraw_value_less_than_balance()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_amount_for_savings_amount_accepts_max_value_1000()" classname="banking.CommandValidatorWithdrawTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

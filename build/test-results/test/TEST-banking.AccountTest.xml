@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.AccountTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.013">
+  <properties/>
+  <testcase name="account_apr_is_supplied_value()" classname="banking.AccountTest" time="0.004"/>
+  <testcase name="account_can_deposit_money_twice()" classname="banking.AccountTest" time="0.002"/>
+  <testcase name="account_returns_age()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="withdraw_with_equal_amount_of_balance_will_go_to_0()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="balance_increases_by_the_amount_deposited()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="account_apr_is_whatever_given_apr_is()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="balance_decreases_by_the_amount_withdrawn()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="balance_cannot_go_below_0_when_withdrawing()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="starting_balance_at_zero_when_created()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="account_can_withdraw_money_twice()" classname="banking.AccountTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

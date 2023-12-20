@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandProcessorTransferTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.003">
+  <properties/>
+  <testcase name="can_transfer_between_checking_accounts()" classname="banking.CommandProcessorTransferTest" time="0.0"/>
+  <testcase name="can_transfer_between_savings_accounts()" classname="banking.CommandProcessorTransferTest" time="0.001"/>
+  <testcase name="can_transfer_from_checking_to_savings_accounts()" classname="banking.CommandProcessorTransferTest" time="0.0"/>
+  <testcase name="can_transfer_amount_greater_than_balance()" classname="banking.CommandProcessorTransferTest" time="0.001"/>
+  <testcase name="can_transfer_from_savings_to_checking_accounts()" classname="banking.CommandProcessorTransferTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

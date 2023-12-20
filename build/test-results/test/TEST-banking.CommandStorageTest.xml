@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandStorageTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.012">
+  <properties/>
+  <testcase name="add_one_invalid_command_to_list()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="transfer_commands_added_to_both_accounts_transaction_history()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="invalid_command_list_is_initially_empty()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="two_valid_commands_stored_for_two_ids()" classname="banking.CommandStorageTest" time="0.001"/>
+  <testcase name="size_of_invalid_command_increases_by_one_after_adding_once()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="valid_command_can_be_stored_for_one_id()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="valid_command_list_is_empty_initially()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="add_two_invalid_command_to_list()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="create_commands_not_added_to_valid_commands()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="valid_commands_can_be_stored_for_one_id()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="size_of_invalid_command_increases_by_two_after_adding_twice()" classname="banking.CommandStorageTest" time="0.0"/>
+  <testcase name="valid_commands_stored_for_two_ids()" classname="banking.CommandStorageTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

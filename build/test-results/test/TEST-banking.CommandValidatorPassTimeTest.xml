@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandValidatorPassTimeTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.012">
+  <properties/>
+  <testcase name="pass_time_command_has_more_than_2_arguments_is_invalid()" classname="banking.CommandValidatorPassTimeTest" time="0.001"/>
+  <testcase name="pass_time_command_cannot_accept_time_larger_than_max_value()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="valid_pass_time_command()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_cannot_accept_time_not_digit()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_cannot_have_typos()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_is_case_insensitive()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_cannot_accept_time_zero()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_accepts_time_at_max_value()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_cannot_have_space_at_the_beginning()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_cannot_accept_time_negative()" classname="banking.CommandValidatorPassTimeTest" time="0.001"/>
+  <testcase name="pass_time_command_cannot_accept_time_not_integer()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_accepts_time_at_min_value()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_can_have_space_at_the_end()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_has_to_have_pass_command()" classname="banking.CommandValidatorPassTimeTest" time="0.001"/>
+  <testcase name="pass_time_command_cannot_have_extra_space_at_the_beginning()" classname="banking.CommandValidatorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_command_has_less_than_2_arguments_is_invalid()" classname="banking.CommandValidatorPassTimeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

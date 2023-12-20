@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandProcessorCreateTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:34" hostname="n3-95-225.dhcp.drexel.edu" time="0.006">
+  <properties/>
+  <testcase name="create_savings_command_processed_with_supplied_apr()" classname="banking.CommandProcessorCreateTest" time="0.001"/>
+  <testcase name="create_cd_command_processed_with_supplied_account_id()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_savings_command_is_processed_to_the_bank()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_savings_command_processed_with_right_account_type()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_cd_command_processed_with_supplied_apr()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_cd_account_has_correct_balance()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_checking_command_processed_with_supplied_account_id()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_checking_command_processed_with_right_account_type()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="bank_contains_accounts_after_processing_commands()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_checking_command_is_processed_to_the_bank()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_cd_command_processed_with_right_account_type()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_cd_command_is_processed_to_the_bank()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_savings_command_processed_with_supplied_account_id()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <testcase name="create_checking_command_processed_with_supplied_apr()" classname="banking.CommandProcessorCreateTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandValidatorCreateTest" tests="40" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.051">
+  <properties/>
+  <testcase name="cd_amount_cannot_have_more_than_two_decimal()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="extra_space_middle()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="apr_not_in_double_form()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="cd_amount_below_range()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="missing_cd_amount()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="account_id_is_not_unique()" classname="banking.CommandValidatorCreateTest" time="0.002"/>
+  <testcase name="account_id_has_less_than_8_digits()" classname="banking.CommandValidatorCreateTest" time="0.003"/>
+  <testcase name="extra_space_end()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="invalid_create_command()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="valid_apr()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="missing_account_id()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="account_id_has_more_than_8_digits()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="case_insensitive_action_command()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="valid_cd_amount()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="apr_at_max_bound()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="cd_amount_can_have_one_decimal()" classname="banking.CommandValidatorCreateTest" time="0.002"/>
+  <testcase name="command_with_redundant_argument_should_return_false()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="missing_account_types()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="invalid_form_of_account_id()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="cd_amount_above_range()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="cd_amount_with_decimal_trailing()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="apr_at_min_bound()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="cd_amount_at_max_bound()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="negative_apr()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="apr_can_have_one_decimal()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="saving_create_command_with_more_than_four_arguments_should_return_false()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="cd_create_command_with_not_enough_argument_should_return_false()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="command_with_one_argument_should_return_false()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="cd_amount_at_min_bound()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="extra_space_beginning()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="missing_create_command()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="negative_account_id()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="apr_can_have_two_decimals()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="missing_apr()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="cd_amount_can_have_two_decimals()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="valid_create_command_string()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="case_insensitive_account_types()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="negative_cd_amount()" classname="banking.CommandValidatorCreateTest" time="0.001"/>
+  <testcase name="apr_not_in_range()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <testcase name="typos_in_account_types()" classname="banking.CommandValidatorCreateTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

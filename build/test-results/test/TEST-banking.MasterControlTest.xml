@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.MasterControlTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:34" hostname="n3-95-225.dhcp.drexel.edu" time="0.151">
+  <properties/>
+  <testcase name="invalid_commands_returns_a_list()" classname="banking.MasterControlTest" time="0.017"/>
+  <testcase name="cd_account_cannot_withdraw_before_one_year()" classname="banking.MasterControlTest" time="0.075"/>
+  <testcase name="invalid_create_an_account_goes_to_invalid_list()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="cannot_withdraw_more_than_max_bound_from_savings_accounts()" classname="banking.MasterControlTest" time="0.002"/>
+  <testcase name="can_create_account_with_id_of_a_already_removed_account()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="display_only_new_create_accounts_transaction_with_id_of_a_already_removed_account()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="pass_time_removes_empty_account()" classname="banking.MasterControlTest" time="0.002"/>
+  <testcase name="typo_in_create_command_is_invalid()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="transfer_between_different_accounts_is_valid()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="deposit_more_than_max_bound_into_savings_is_invalid()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="pass_time_with_multiple_accounts_present()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="display_nothing_if_both_accounts_after_transfer_got_removed()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="valid_withdraw_commands_are_stored()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="sample_make_sure_this_passes_unchanged()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="valid_commands_to_create_two_accounts_and_stores_transaction_history_with_invalid_command_at_end()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="cannot_withdraw_more_than_max_bound_from_checking_accounts()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="withdraw_from_account_that_does_not_exist_is_invalid()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="deposit_more_than_max_bound_into_checking_accounts_is_invalid()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="create_two_accounts_with_same_id_is_invalid()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="valid_deposit_command_got_stored()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="cannot_open_cd_account_without_balance()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="two_commands_with_typos_invalid()" classname="banking.MasterControlTest" time="0.003"/>
+  <testcase name="valid_and_invalid_commands_and_pass_time_got_calculated()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="transfer_between_same_account_is_invalid()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="valid_commands_and_pass_time_got_calculated()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="keep_transfer_transactions_of_that_account_even_other_account_got_deleted()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="typo_in_deposit_command_is_invalid()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="creating_accounts_with_same_id_invalid()" classname="banking.MasterControlTest" time="0.003"/>
+  <testcase name="cannot_withdraw_from_savings_account_more_than_once_per_month()" classname="banking.MasterControlTest" time="0.01"/>
+  <testcase name="deposit_into_cd_account_is_invalid()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="cannot_deposit_into_account_that_does_not_exist()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="transfer_between_the_same_account_is_invalid()" classname="banking.MasterControlTest" time="0.0"/>
+  <system-out><![CDATA[[Savings 12345678 700.00 0.60, Deposit 12345678 700, Withdraw 12345678 300, Deposit 12345678 300, Withdraw 12345678 200]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

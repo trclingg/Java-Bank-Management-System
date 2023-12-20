@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandValidatorTransferTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:34" hostname="n3-95-225.dhcp.drexel.edu" time="0.053">
+  <properties/>
+  <testcase name="transfer_command_with_extra_whitespace_in_the_beginning_is_invalid()" classname="banking.CommandValidatorTransferTest" time="0.013"/>
+  <testcase name="transfer_amount_can_be_zero()" classname="banking.CommandValidatorTransferTest" time="0.004"/>
+  <testcase name="transfer_amount_can_double_one_decimal_place()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="can_transfer_between_checking_accounts()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="transfer_from_savings_account_cannot_have_amount_greater_than_1000()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="cd_account_cannot_be_transferred_from()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_from_checking_account_cannot_have_amount_greater_than_400()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="transfer_command_must_include_the_transfer()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="transfer_from_checking_account_can_have_amount_at_max_400()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="can_transfer_between_saving_accounts()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="account_ID_of_sending_account_should_be_valid()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_command_is_invalid_if_account_transfer_from_doesnt_exist()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_command_cannot_have_negative_transfer_amount()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="account_ID_of_receiving_account_should_be_valid()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="cd_account_cannot_be_transferred_to()" classname="banking.CommandValidatorTransferTest" time="0.002"/>
+  <testcase name="transfer_amount_can_be_double_two_decimal_place()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_from_savings_account_can_have_amount_at_max_1000()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_command_is_invalid_if_account_transfer_to_doesnt_exist()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="transfer_command_is_case_insensitive()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="transfer_command_with_extra_whitespace_in_the_middle_is_invalid()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_command_is_invalid_with_1_account_id()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_command_with_typos_is_invalid()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="cannot_transfer_between_same_account()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="transfer_command_can_have_extra_whitespace_in_the_end()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_command_having_extra_arguments_is_invalid()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_amount_cannot_be_double_more_than_two_decimal_place()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_command_is_invalid_with_no_transfer_amount()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="transfer_amount_must_be_in_digit_form()" classname="banking.CommandValidatorTransferTest" time="0.0"/>
+  <testcase name="valid_transfer_command_()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <testcase name="can_transfer_between_saving_and_checking_accounts()" classname="banking.CommandValidatorTransferTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

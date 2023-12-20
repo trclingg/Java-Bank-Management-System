@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandProcessorWithdrawTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.005">
+  <properties/>
+  <testcase name="withdraw_money_once_from_savings_account()" classname="banking.CommandProcessorWithdrawTest" time="0.001"/>
+  <testcase name="withdraw_from_empty_savings_account()" classname="banking.CommandProcessorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_from_non_empty_checking_account()" classname="banking.CommandProcessorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_from_empty_checking_account()" classname="banking.CommandProcessorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_money_twice_from_checking_account()" classname="banking.CommandProcessorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_from_non_empty_savings_account()" classname="banking.CommandProcessorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_from_cd_account()" classname="banking.CommandProcessorWithdrawTest" time="0.0"/>
+  <testcase name="withdraw_money_once_from_checking_account()" classname="banking.CommandProcessorWithdrawTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

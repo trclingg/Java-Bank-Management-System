@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandValidatorDepositTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.011">
+  <properties/>
+  <testcase name="invalid_deposit_cd_account()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="case_insensitive_deposit_command()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_valid_with_integer_amount()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_command_with_extra_space_end()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_command_with_exceeded_words_is_invalid()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_negative_account_id()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_amount_with_more_than_two_decimals()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="invalid_deposit_max_savings_exceeded()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="cant_deposit_without_adding_account_in_bank()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_valid_with_one_decimal()" classname="banking.CommandValidatorDepositTest" time="0.001"/>
+  <testcase name="invalid_deposit_max_checking_exceeded()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="valid_deposit_zero()" classname="banking.CommandValidatorDepositTest" time="0.001"/>
+  <testcase name="invalid_deposit_missing_amount()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_is_valid()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="invalid_deposit_negative()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="valid_deposit_max_checking()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="valid_deposit_max_savings()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_in_cd_account_is_invalid()" classname="banking.CommandValidatorDepositTest" time="0.001"/>
+  <testcase name="deposit_command_with_length_one_is_invalid()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_command_with_extra_space_beginning()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_command_with_extra_space_middle()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_account_id_not_in_number_form()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_invalid_account_id_length_less_than_8_digits()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="invalid_deposit_command()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="invalid_deposit_missing_account_id()" classname="banking.CommandValidatorDepositTest" time="0.001"/>
+  <testcase name="invalid_deposit_missing_account_id_and_amount()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="missing_deposit_command()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_valid_with_two_decimals()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="deposit_invalid_account_id_length_more_than_8_digits()" classname="banking.CommandValidatorDepositTest" time="0.0"/>
+  <testcase name="invalid_deposit_typos_in_command()" classname="banking.CommandValidatorDepositTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

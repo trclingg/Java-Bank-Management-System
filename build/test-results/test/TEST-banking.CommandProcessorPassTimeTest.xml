@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandProcessorPassTimeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-12-11T23:24:35" hostname="n3-95-225.dhcp.drexel.edu" time="0.013">
+  <properties/>
+  <testcase name="pass_one_month_returns_correct_deducted_balance_for_account_under_100()" classname="banking.CommandProcessorPassTimeTest" time="0.001"/>
+  <testcase name="pass_one_month_removes_one_empty_account()" classname="banking.CommandProcessorPassTimeTest" time="0.0"/>
+  <testcase name="pass_two_months_keeps_non_empty_account()" classname="banking.CommandProcessorPassTimeTest" time="0.003"/>
+  <testcase name="pass_one_month_keeps_non_empty_account()" classname="banking.CommandProcessorPassTimeTest" time="0.0"/>
+  <testcase name="cd_account_balance_is_calculated_correctly_after_one_month()" classname="banking.CommandProcessorPassTimeTest" time="0.001"/>
+  <testcase name="pass_two_month_returns_correct_new_balance()" classname="banking.CommandProcessorPassTimeTest" time="0.0"/>
+  <testcase name="pass_time_twice()" classname="banking.CommandProcessorPassTimeTest" time="0.0"/>
+  <testcase name="pass_one_month_returns_correct_new_balance()" classname="banking.CommandProcessorPassTimeTest" time="0.002"/>
+  <testcase name="pass_two_months_removes_one_empty_account()" classname="banking.CommandProcessorPassTimeTest" time="0.001"/>
+  <testcase name="pass_two_month_returns_correct_deducted_balance_for_account_under_100()" classname="banking.CommandProcessorPassTimeTest" time="0.0"/>
+  <testcase name="cd_account_balance_is_calculated_correctly_after_two_months()" classname="banking.CommandProcessorPassTimeTest" time="0.0"/>
+  <testcase name="pass_one_month_removes_two_empty_account2()" classname="banking.CommandProcessorPassTimeTest" time="0.001"/>
+  <testcase name="pass_two_months_removes_two_empty_account2()" classname="banking.CommandProcessorPassTimeTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
